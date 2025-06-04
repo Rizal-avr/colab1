@@ -28,9 +28,9 @@
                     </a>
                 </li>
                 <li class="sidebar-menu__item">
-                    <a href="assignment.html" class="sidebar-menu__link">
+                    <a href="{{ route('pembelian.index') }}" class="sidebar-menu__link">
                         <span class="icon"><i class="ph ph-clipboard-text"></i></span>
-                        <span class="text">Assignments</span>
+                        <span class="text">Pembelian</span>
                     </a>
                 </li>
                 <li class="sidebar-menu__item">

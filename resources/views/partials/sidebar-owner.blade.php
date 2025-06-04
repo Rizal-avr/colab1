@@ -28,6 +28,11 @@
                     </a>
                 </li>
                 <li class="sidebar-menu__item">
+                    <a href="{{ route('petani.index') }}" class="sidebar-menu__link">
+                        <span class="icon"><i class="ph ph-users-three"></i></span>
+                        <span class="text">Petani</span>
+                    </a>
+                <li class="sidebar-menu__item">
                     <a href="pricing-plan.html" class="sidebar-menu__link">
                         <span class="icon"><i class="ph ph-coins"></i></span>
                         <span class="text">Debt</span>
@@ -47,9 +52,9 @@
                 </li>
                 <li class="sidebar-menu__item">
                     <a href="{{ route('penjualan.index') }}" class="sidebar-menu__link">
-                        <span class="icon"><i class="ph ph-clipboard-text"></i></span>
-                        <span class="text">Penjualan</span>
-                    </a>
+                <span class="icon"><i class="ph ph-clipboard-text"></i></span>
+                <span class="text">Penjualan</span>
+                </a>
                 </li>
                 <li class="sidebar-menu__item">
                     <a href="resources.html" class="sidebar-menu__link">
