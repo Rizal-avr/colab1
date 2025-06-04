@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id('id_transaksi');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('id_mitra')->constrained('mitra', 'id_mitra');
-            $table->date('tanggal_transaksi');
+            $table->date('date');
             $table->enum('jenis_transaksi', ['penjualan', 'pembelian']);
             $table->foreignId('id_sayur')->constrained('sayur', 'id_sayur');
             $table->decimal('kuantitas', 10, 1);
-            $table->decimal('harga_satuan', 12, 0);
+            $table->decimal('price', 12, 0);
             $table->decimal('total_transaksi', 15, 2);
             $table->enum('jenis_pembayaran', ['tunai', 'hutang']);
             $table->timestamps();

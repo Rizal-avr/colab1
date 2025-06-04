@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 
 class TransaksiSeeder extends Seeder
@@ -14,18 +15,24 @@ class TransaksiSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('transaksi')->insert([
-            'user_id' => '1',
-            'id_mitra' => '2',
-            'tanggal_transaksi' => '2025-06-01',
-            'jenis_transaksi' => 'penjualan',
-            'id_sayur' => '1',
-            'kuantitas' => '4.5',
-            'harga_satuan' => '10000',
-            'total_transaksi' => '45000',
-            'jenis_pembayaran' => 'tunai',
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
+        for ($i = 0; $i < 40; $i++) {
+            $kuantitas = rand(5, 50); // kg
+            $harga_satuan = rand(1000, 10000); // per kg
+            $total = $kuantitas * $harga_satuan;
+
+            DB::table('transaksi')->insert([
+                'user_id' => 1, // pastikan user dengan id 1 ada
+                'id_mitra' => 1, // pastikan mitra dengan id 1 ada
+                'date' => Carbon::now()->subDays(rand(0, 30))->format('Y-m-d'),
+                'jenis_transaksi' => rand(0, 1) ? 'penjualan' : 'pembelian',
+                'id_sayur' => rand(1, 7), // random sayur ID
+                'kuantitas' => $kuantitas,
+                'price' => $harga_satuan,
+                'total_transaksi' => $total,
+                'jenis_pembayaran' => rand(0, 1) ? 'tunai' : 'hutang',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        }
     }
 }
