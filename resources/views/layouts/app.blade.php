@@ -44,4 +44,33 @@
 
 </body>
 
+    <script src="{{asset('assets/js/jquery-3.7.1.min.js')}}"></script>
+    <!-- Bootstrap Bundle Js -->
+    <script src="{{asset('assets/js/boostrap.bundle.min.js')}}"></script>
+    <!-- Phosphor Js -->
+    <script src="{{asset('assets/js/phosphor-icon.js')}}"></script>
+    <!-- file upload -->
+    <script src="{{asset('assets/js/file-upload.js')}}"></script>
+    <!-- file upload -->
+    <script src="{{asset('assets/js/plyr.js')}}"></script>
+    <!-- dataTables -->
+    <script src="{{asset('https://cdn.datatables.net/2.0.8/js/dataTables.min.js')}}"></script>
+    <!-- full calendar -->
+    <script src="{{asset('assets/js/full-calendar.js')}}"></script>
+    <!-- jQuery UI -->
+    <script src="{{asset('assets/js/jquery-ui.js')}}"></script>
+    <!-- jQuery UI -->
+    <script src="{{asset('assets/js/editor-quill.js')}}"></script>
+    <!-- apex charts -->
+    <script src="{{asset('assets/js/apexcharts.min.js')}}"></script>
+    <!-- Calendar Js -->
+    <script src="{{asset('assets/js/calendar.js')}}"></script>
+    <!-- jvectormap Js -->
+    <script src="{{asset('assets/js/jquery-jvectormap-2.0.5.min.js')}}"></script>
+    <!-- jvectormap world Js -->
+    <script src="{{asset('assets/js/jquery-jvectormap-world-mill-en.js')}}"></script>
+    
+    <!-- main js -->
+    <script src="{{asset('assets/js/main.js')}}"></script>
+
 </html>

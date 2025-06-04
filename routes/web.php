@@ -9,8 +9,8 @@ use App\Http\Controllers\Admin\PenjualanController;
 
 use App\Http\Middleware\PreventLoginForAuthenticated;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
-
-
+use App\Http\Controllers\Owner\OwnerDashboardController;
+use App\Http\Controllers\Owner\UserController;
 
 Route::get('/', [LoginController::class, 'showLoginForm'])->name('login');
 
@@ -31,9 +31,9 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
 
 // Route untuk Owner
 Route::middleware(['auth', 'role:owner'])->prefix('owner')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    });
+    Route::get('/dashboard', [OwnerDashboardController::class, 'index'])->name('dashboard');
+    Route::get('/user', [UserController::class, 'index'])->name('user');
+
 
     // Tambahkan route owner lainnya di sini
     // Route::get('/profile', [OwnerController::class, 'profile']);
