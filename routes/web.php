@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\admin\PembelianController;
+use App\Http\Controllers\owner\PetaniController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MitraController;
@@ -23,6 +25,7 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     Route::get('/get-kecamatan/{id_kabupaten}', [PelangganController::class, 'getKecamatan']);
 
     Route::resource('/penjualan', PenjualanController::class)->names('penjualan');
+    Route::resource('/pembelian', PembelianController::class)->names('pembelian');
 });
 
 
@@ -32,6 +35,10 @@ Route::middleware(['auth', 'role:owner'])->prefix('owner')->group(function () {
     Route::get('/user', [UserController::class, 'index'])->name('user');
     Route::get('/market-prices', [PricePredictionController::class, 'showPredictionForm'])->name('market.prices');
     Route::post('/predict', [PricePredictionController::class, 'predict'])->name('predict');
+    Route::resource('/petani', PetaniController::class)->names('petani');
+    Route::get('/get-kecamatan/{id_kabupaten}', [PetaniController::class, 'getKecamatan']);
+
+
 
 
     // Tambahkan route owner lainnya di sini
