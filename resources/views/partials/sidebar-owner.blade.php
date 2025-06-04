@@ -34,7 +34,7 @@
                     </a>
                 </li>
                 <li class="sidebar-menu__item">
-                    <a href="analytics.html" class="sidebar-menu__link">
+                    <a href="{{ route('market.prices')}}" class="sidebar-menu__link">
                         <span class="icon"><i class="ph ph-chart-bar"></i></span>
                         <span class="text">Prediction</span>
                     </a>

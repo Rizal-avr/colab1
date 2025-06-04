@@ -17,11 +17,6 @@ Route::get('/', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('signin'); // OK
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/market-prices', [PricePredictionController::class, 'showMarketPrices'])->name('market.prices');
-Route::post('/predict', [PricePredictionController::class, 'predict'])->name('predict');
-
-
-
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('/pelanggan', PelangganController::class)->names('pelanggan');
@@ -35,6 +30,8 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
 Route::middleware(['auth', 'role:owner'])->prefix('owner')->group(function () {
     Route::get('/dashboard', [OwnerDashboardController::class, 'index'])->name('dashboard');
     Route::get('/user', [UserController::class, 'index'])->name('user');
+    Route::get('/market-prices', [PricePredictionController::class, 'showPredictionForm'])->name('market.prices');
+    Route::post('/predict', [PricePredictionController::class, 'predict'])->name('predict');
 
 
     // Tambahkan route owner lainnya di sini
