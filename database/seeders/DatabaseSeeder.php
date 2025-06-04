@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
         $this->call(MitraSeeder::class);
         $this->call(SayurSeeder::class);
         $this->call(TransaksiSeeder::class);
+        $this->call(MarketPriceSeeder::class);
+        
 
     }
 }

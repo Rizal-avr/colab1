@@ -4,19 +4,21 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MitraController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\Admin\PelangganController;
-use App\Http\Controllers\Admin\PenjualanController;
-
-use App\Http\Middleware\PreventLoginForAuthenticated;
-use App\Http\Controllers\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\Owner\OwnerDashboardController;
 use App\Http\Controllers\Owner\UserController;
+use App\Http\Controllers\Admin\PelangganController;
+
+use App\Http\Controllers\Admin\PenjualanController;
+use App\Http\Controllers\PricePredictionController;
+use App\Http\Middleware\PreventLoginForAuthenticated;
+use App\Http\Controllers\Owner\OwnerDashboardController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 Route::get('/', [LoginController::class, 'showLoginForm'])->name('login');
-
-
 Route::post('/login', [LoginController::class, 'login'])->name('signin'); // OK
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/market-prices', [PricePredictionController::class, 'showMarketPrices'])->name('market.prices');
+Route::post('/predict', [PricePredictionController::class, 'predict'])->name('predict');
 
 
 
