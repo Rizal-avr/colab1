@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\transaksi;
 use App\Models\Mitra;
+use App\Models\Debt;
 use App\Models\sayur;
 use Illuminate\Http\Request;
 
@@ -23,33 +24,41 @@ class PenjualanController extends Controller
 
     public function store(Request $request)
     {
-
-
         $validated = $request->validate([
             'id_mitra' => 'required|exists:mitra,id_mitra',
-            'tanggal_transaksi' => 'required|date',
+            'date' => 'required|date',
             'id_sayur' => 'required|exists:sayur,id_sayur',
             'kuantitas' => 'required|numeric|min:0.1',
-            'harga_satuan' => 'required|numeric|min:0',
-            'jenis_pembayaran' => 'required|in:tunai,hutang',
+            'price' => 'required|numeric|min:0',
+            'jenis_pembayaran' => 'required|in:tunai,DP',
         ]);
 
         try {
-            // Cari mitra berdasarkan nam
+            $total = $request->kuantitas * $request->price;
 
-            $total = $request->kuantitas * $request->harga_satuan;
-
-            Transaksi::create([
+            // Simpan transaksi terlebih dahulu
+            $transaksi = transaksi::create([
                 'user_id' => auth()->id(),
                 'id_mitra' => $request->id_mitra,
-                'tanggal_transaksi' => $request->tanggal_transaksi,
+                'date' => $request->date,
                 'jenis_transaksi' => 'penjualan',
                 'id_sayur' => $request->id_sayur,
                 'kuantitas' => $request->kuantitas,
-                'harga_satuan' => $request->harga_satuan,
+                'price' => $request->price,
                 'total_transaksi' => $total,
                 'jenis_pembayaran' => $request->jenis_pembayaran,
             ]);
+
+            // Jika jenis pembayaran adalah DP, simpan ke tabel Debt
+            if ($request->jenis_pembayaran === 'DP') {
+                $hutang = 0.9 * $total; // 90% dari total
+                
+                // dd($transaksi);
+                Debt::create([
+                    'id_transaksi' => $transaksi->id_transaksi, // asumsi foreign key
+                    'jumlah' => $hutang,
+                ]);
+            }
 
             return redirect()->route('penjualan.index')
                 ->with('success', 'Transaksi berhasil ditambahkan.');

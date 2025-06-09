@@ -29,7 +29,7 @@ class TransaksiSeeder extends Seeder
                 'kuantitas' => $kuantitas,
                 'price' => $harga_satuan,
                 'total_transaksi' => $total,
-                'jenis_pembayaran' => rand(0, 1) ? 'tunai' : 'hutang',
+                'jenis_pembayaran' => rand(0, 1) ? 'tunai' : 'DP',
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

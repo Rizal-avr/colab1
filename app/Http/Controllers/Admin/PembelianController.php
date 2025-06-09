@@ -26,26 +26,26 @@ class PembelianController extends Controller
 
         $validated = $request->validate([
             'id_mitra' => 'required|exists:mitra,id_mitra',
-            'tanggal_transaksi' => 'required|date',
+            'date' => 'required|date',
             'id_sayur' => 'required|exists:sayur,id_sayur',
             'kuantitas' => 'required|numeric|min:0.1',
-            'harga_satuan' => 'required|numeric|min:0',
+            'price' => 'required|numeric|min:0',
             'jenis_pembayaran' => 'required|in:tunai,hutang',
         ]);
 
         try {
             // Cari mitra berdasarkan nam
 
-            $total = $request->kuantitas * $request->harga_satuan;
+            $total = $request->kuantitas * $request->price;
 
             Transaksi::create([
                 'user_id' => auth()->id(),
                 'id_mitra' => $request->id_mitra,
-                'tanggal_transaksi' => $request->tanggal_transaksi,
+                'date' => $request->date,
                 'jenis_transaksi' => 'pembelian',
                 'id_sayur' => $request->id_sayur,
                 'kuantitas' => $request->kuantitas,
-                'harga_satuan' => $request->harga_satuan,
+                'price' => $request->price,
                 'total_transaksi' => $total,
                 'jenis_pembayaran' => $request->jenis_pembayaran,
             ]);

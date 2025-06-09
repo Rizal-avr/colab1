@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="dashboard-main-wrapper">
     <h2>Prediksi Harga dengan SARIMA</h2>
     
     <form method="POST" action="{{ route('predict') }}">

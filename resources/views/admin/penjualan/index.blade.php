@@ -381,10 +381,10 @@
                                     </select>
                                 </div>
                                 <div class="col-12 mb-20">
-                                    <label for="tanggal_transaksi" class="form-label fw-semibold text-primary-light text-sm mb-8">
+                                    <label for="date" class="form-label fw-semibold text-primary-light text-sm mb-8">
                                         Tanggal:
                                     </label>
-                                    <input type="date" name="tanggal_transaksi" id="tanggal_transaksi" class="form-control radius-8"
+                                    <input type="date" name="date" id="date" class="form-control radius-8"
                                         required>
                                 </div>
 
@@ -410,10 +410,10 @@
                                         step="0.1" min="0.1" required>
                                 </div>
                                 <div class="col-6 mb-20">
-                                    <label for="harga_satuan" class="form-label fw-semibold text-primary-light text-sm mb-8">
+                                    <label for="price" class="form-label fw-semibold text-primary-light text-sm mb-8">
                                         Harga Satuan (Rp):
                                     </label>
-                                    <input type="number" name="harga_satuan" id="harga_satuan"
+                                    <input type="number" name="price" id="price"
                                         class="form-control radius-8"
                                         placeholder="Masukkan harga satuan"
                                         min="0" required>
@@ -426,7 +426,7 @@
                                         class="form-control radius-8" required>
                                         <option value="">-- Pilih Jenis Pembayaran --</option>
                                         <option value="tunai">Tunai</option>
-                                        <option value="hutang">Hutang</option>
+                                        <option value="DP">Hutang</option>
                                     </select>
                                 </div>
 
@@ -466,6 +466,7 @@
                             <th class="h6 text-gray-300">Sayur</th>
                             <th class="h6 text-gray-300">Kuantitas(kg)</th>
                             <th class="h6 text-gray-300">Harga Satuan</th>
+                            <th class="h6 text-gray-300">Pembayaran</th>
                             <th class="h6 text-gray-300">Total</th>
                             <th class="h6 text-gray-300">Detail</th>
 
@@ -483,7 +484,7 @@
                             </td>
                             <td>
                                 <div class="flex-align gap-8">
-                                    <span class="h6 mb-0 fw-medium text-gray-300">{{ $penjualans->tanggal_transaksi }}</span>
+                                    <span class="h6 mb-0 fw-medium text-gray-300">{{ $penjualans->date }}</span>
                                 </div>
                             </td>
                             <td>
@@ -496,7 +497,14 @@
                                 <span class="h6 mb-0 fw-medium text-gray-300">{{ $penjualans->kuantitas }}</span>
                             </td>
                             <td>
-                                <span class="h6 mb-0 fw-medium text-gray-300">{{ $penjualans->harga_satuan }}</span>
+                                <span class="h6 mb-0 fw-medium text-gray-300">{{ $penjualans->price }}</span>
+                            </td>
+                            <td>
+                                <span
+                                    class="text-13 py-2 px-8 {{ $penjualans->jenis_pembayaran == 'tunai' ? 'bg-success-50 text-success-600' : 'bg-danger-50 text-danger-600' }} d-inline-flex align-items-center gap-8 rounded-pill">
+                                    <span class="w-6 h-6 {{ $penjualans->jenis_pembayaran == 'tunai' ? 'bg-success-600' : 'bg-danger-600' }} rounded-circle flex-shrink-0"></span>
+                                    {{ $penjualans->jenis_pembayaran == 'tunai' ? 'tunai' : 'DP' }}
+                                </span>
                             </td>
                             <td>
                                 <span class="h6 mb-0 fw-medium text-gray-300">{{ $penjualans->total_transaksi }}</span>
@@ -556,60 +564,7 @@
 
             <script>
                 // ========================== Export Js Start ==============================
-                document.getElementById('exportOptions').addEventListener('change', function() {
-                    const format = this.value;
-                    const table = document.getElementById('studentTable');
-                    let data = [];
-                    const headers = [];
 
-                    // Get the table headers
-                    table.querySelectorAll('thead th').forEach(th => {
-                        headers.push(th.innerText.trim());
-                    });
-
-                    // Get the table rows
-                    table.querySelectorAll('tbody tr').forEach(tr => {
-                        const row = {};
-                        tr.querySelectorAll('td').forEach((td, index) => {
-                            row[headers[index]] = td.innerText.trim();
-                        });
-                        data.push(row);
-                    });
-
-                    if (format === 'csv') {
-                        downloadCSV(data);
-                    } else if (format === 'json') {
-                        downloadJSON(data);
-                    }
-                });
-
-                function downloadCSV(data) {
-                    const csv = data.map(row => Object.values(row).join(',')).join('\n');
-                    const blob = new Blob([csv], {
-                        type: 'text/csv'
-                    });
-                    const url = URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.download = 'students.csv';
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                }
-
-                function downloadJSON(data) {
-                    const json = JSON.stringify(data, null, 2);
-                    const blob = new Blob([json], {
-                        type: 'application/json'
-                    });
-                    const url = URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.download = 'students.json';
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                }
                 // ========================== Export Js End ==============================
 
                 // Table Header Checkbox checked all js Start

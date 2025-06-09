@@ -15,11 +15,11 @@ class transaksi extends Model
     protected $fillable = [
         'user_id',
         'id_mitra',
-        'tanggal_transaksi',
+        'date',
         'jenis_transaksi',
         'id_sayur',
         'kuantitas',
-        'harga_satuan',
+        'price',
         'total_transaksi',
         'jenis_pembayaran',
     ];
@@ -37,5 +37,10 @@ class transaksi extends Model
     public function mitra()
     {
         return $this->belongsTo(Mitra::class, 'id_mitra');
+    }
+
+    public function debt()
+    {
+        return $this->hasOne(Debt::class, 'id_debt');
     }
 }

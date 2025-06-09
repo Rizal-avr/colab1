@@ -242,6 +242,21 @@
     border-color: none;
 }
 
+.day {
+    cursor: pointer;
+    text-align: center;
+    padding: 8px;
+    border-radius: 4px;
+}
+.day:hover {
+    background-color: #f0f0f0;
+}
+.today {
+    background-color: #e0ffe0;
+    font-weight: bold;
+}
+
+
 .btn {
     position: relative;
     border-radius: 6px;

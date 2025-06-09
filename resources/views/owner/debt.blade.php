@@ -323,7 +323,7 @@
                         class="flex-align text-gray-500 text-13 border border-gray-100 rounded-4 ps-20 focus-border-main-600 bg-white">
                         <span class="text-lg"></span>
                         <button href="#tambahmodal" data-bs-toggle="modal" data-bs-target="#tambahmodal" class="ps-8 pe-20 py-16 border-0 text-inherit rounded-4 text-center">
-                            <i></i>Tambah Pelanggan
+                            <i></i>Tambah petani
                         </button>
                     </div>
                     <span class="text-inherit">Sort by: </span>
@@ -338,83 +338,8 @@
                         </select>
                     </div>
                 </div>
-                
             </div>
             <!-- Breadcrumb Right End -->
-        </div>
-
-
-        <!-- modal tambah -->
-        <div class="modal fade" id="tambahmodal" tabindex="-1"
-            aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog modal-dialog-centered">
-                <div class="modal-content radius-16 bg-base">
-                    <div
-                        class="modal-header py-16 px-24 border border-top-0 border-start-0 border-end-0">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Data Pelanggan</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body p-24">
-                        <form id="formTambahPelanggan" action="{{ route('pelanggan.store') }}" method="POST">
-                            @csrf
-                            <div class="row">
-                                <div class="col-12 mb-20">
-                                    <label
-                                        for="nama_mitra" class="form-label fw-semibold text-primary-light text-sm mb-8">Nama Pelanggan : </label>
-                                    <input type="text" name="nama_mitra" id="nama_mitra" class="form-control radius-8"
-                                        placeholder="Masukkan nama pelanggan ">
-                                </div>
-                                <div class="col-12 mb-20">
-                                    <label
-                                        for="no_hp" class="form-label fw-semibold text-primary-light text-sm mb-8">No Hp : </label>
-                                    <input type="text" name="no_hp" id="no_hp" class="form-control radius-8"
-                                        placeholder="Masukkan nama pelanggan ">
-                                </div>
-                                <div class="col-md-6 mb-20">
-                                    <label for="id_kabupaten"
-                                        class="form-label fw-semibold text-primary-light text-sm mb-8">Kabupaten</label>
-
-                                    <!-- kabupatens -->
-                                    <select name="id_kabupaten" id="id_kabupaten" class=" position-relative">
-                                        <option value="">Pilih Kabupaten</option>
-                                        @foreach($kabupatens as $kabupaten)
-                                        <option value="{{ $kabupaten->id_kabupaten }}">{{ $kabupaten->nama_kabupaten }}</option>
-                                        @endforeach
-                                    </select>
-
-                                </div>
-                                <div class="col-md-6 mb-20">
-                                    <label for="id_kecamatan"
-                                        class="form-label fw-semibold text-primary-light text-sm mb-8">Kecamatan</label>
-                                    <select name="id_kecamatan" id="id_kecamatan" class=" position-relative">
-                                        <option value="">Pilih Kecamatan</option>
-                                    </select>
-                                </div>
-
-
-                                <div class="col-12 mb-20">
-                                    <label for="detail_alamat"
-                                        class="form-label fw-semibold text-primary-light text-sm mb-8">Detail Alamat</label>
-                                    <textarea name="detail_alamat" id="detail_alamat" class="form-control" id="desc" rows="4" cols="50" placeholder="Masukkan detail alamat"></textarea>
-                                </div>
-
-                                <div
-                                    class="d-flex align-items-center justify-content-center gap-8 mt-24">
-                                    <button type="reset"
-                                        class="btn bg-danger-600 hover-bg-danger-800 border-danger-600 hover-border-danger-800 text-md px-24 py-12 radius-8">
-                                        Cancel
-                                    </button>
-                                    <button type="submit"
-                                        class="btn bg-main-600 hover-bg-main-800 border-main-600 hover-border-main-800 text-md px-24 py-12 radius-8">
-                                        Save
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
         </div>
 
 
@@ -424,56 +349,51 @@
                     <thead>
                         <tr>
                             <th class="fixed-width">
-                                
+                                <div class="form-check">
+                                    <input class="form-check-input border-gray-200 rounded-4" type="checkbox"
+                                        id="selectAll">
+                                </div>
                             </th>
-                            <th class="h6 text-gray-300">Nama Pelanggan</th>
-                            <th class="h6 text-gray-300">No HP</th>
-                            <th class="h6 text-gray-300">Alamat</th>
-                            <th class="h6 text-gray-300">Status</th>
+                            <th class="h6 text-gray-300">Nama</th>
+                            <th class="h6 text-gray-300">Date</th>
+                            <th class="h6 text-gray-300">Jumlah</th>
                             <th class="h6 text-gray-300">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         {{-- askdnkajsdnkjasdnkajsndjnsad --}}
-                        @foreach ($mitra as $mitras)
+                        @foreach ($debts as $debt)
                         <tr>
                             <td class="fixed-width">
-                                
+                                <div class="form-check">
+                                    <input class="form-check-input border-gray-200 rounded-4" type="checkbox">
+                                </div>
                             </td>
                             <td>
                                 <div class="flex-align gap-8">
                                     <img src="{{ asset('assets/images/thumbs/student-img1.png') }}"
                                         alt="" class="w-40 h-40 rounded-circle">
-                                    <span class="h6 mb-0 fw-medium text-gray-300">{{ $mitras->nama_mitra }}</span>
+                                    <span class="h6 mb-0 fw-medium text-gray-300">{{ $debt->transaksi->mitra->nama_mitra }}</span>
                                 </div>
                             </td>
                             <td>
-                                <span class="h6 mb-0 fw-medium text-gray-300">{{ $mitras->no_hp }}</span>
+                                <span class="h6 mb-0 fw-medium text-gray-300">{{ $debt->transaksi->date }}</span>
                             </td>
                             <td>
-                                <span class="h6 mb-0 fw-medium text-gray-300">{{ $mitras->alamat->detail_alamat }}</span>
+                                <span class="h6 mb-0 fw-medium text-gray-300">{{ $debt->jumlah }}</span>
                             </td>
                             <td>
-                                <span
-                                    class="text-13 py-2 px-8 {{ $mitras->status_mitra == '1' ? 'bg-success-50 text-success-600' : 'bg-danger-50 text-danger-600' }} d-inline-flex align-items-center gap-8 rounded-pill">
-                                    <span class="w-6 h-6 {{ $mitras->status_mitra == '1' ? 'bg-success-600' : 'bg-danger-600' }} rounded-circle flex-shrink-0"></span>
-                                    {{ $mitras->status_mitra == '1' ? 'Aktif' : 'Nonaktif' }}
-                                </span>
-                            </td>
-
-                            <td>
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#detailPelangganModal-{{ $mitras->id_mitra }}"
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#detaildebt-{{ $debt->id_debt }}"
                                     class="bg-main-50 text-main-600 py-2 px-14 rounded-pill hover-bg-main-600 hover-text-white">
-                                    View More
+                                    Details
                                 </a>
                             </td>
                         </tr>
 
 
 
-
-                        <!-- Modal Add Event -->
-                        <div class="modal fade" id="detailPelangganModal-{{ $mitras->id_mitra }}" tabindex="-1"
+                        <!-- modal -->
+                        <div class="modal fade" id="detaildebt-{{ $debt->id_debt }}" tabindex="-1"
                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg modal-dialog modal-dialog-centered">
                                 <div class="modal-content radius-16 bg-base">
@@ -484,33 +404,27 @@
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body p-24">
-                                        <form id="formUpdateStatus-{{ $mitras->id_mitra }}" method="POST"
-                                            action="{{ route('pelanggan.update', $mitras->id_mitra) }}">
+                                        <form id="formDebt-{{ $debt->id_debt }}" method="POST"
+                                            action="{{ route('debt.update', $debt->id_debt) }}">
                                             @csrf
                                             @method('PUT')
                                             <div class="row">
                                                 <div class="col-12 mb-20">
                                                     <label
-                                                        class="form-label fw-semibold text-primary-light text-sm mb-8">Nama Pelanggan</label>
-                                                    <input type="text" class="form-control radius-8" value="{{ $mitras->nama_mitra }}" disabled
+                                                        class="form-label fw-semibold text-primary-light text-sm mb-8">Nama pelanggan</label>
+                                                    <input type="text" class="form-control radius-8" value="{{ $debt->transaksi->mitra->nama_mitra }}" disabled
                                                         placeholder="Enter Event Title ">
                                                 </div>
                                                 <div class="col-6 mb-20">
                                                     <label
-                                                        class="form-label fw-semibold text-primary-light text-sm mb-8">Kabupaten</label>
-                                                    <input type="text" class="form-control radius-8" value="{{ $mitras->alamat->kecamatan->kabupaten->nama_kabupaten }}" disabled
+                                                        class="form-label fw-semibold text-primary-light text-sm mb-8">Tanggal</label>
+                                                    <input type="text" class="form-control radius-8" value="{{ $debt->transaksi->date }}" disabled
                                                         placeholder="Enter Event Title ">
                                                 </div>
                                                 <div class="col-6 mb-20">
                                                     <label
-                                                        class="form-label fw-semibold text-primary-light text-sm mb-8">Kecamatan</label>
-                                                    <input type="text" class="form-control radius-8" value="{{ $mitras->alamat->kecamatan->nama_kecamatan}}" disabled
-                                                        placeholder="Enter Event Title ">
-                                                </div>
-                                                <div class="col-12 mb-20">
-                                                    <label
-                                                        class="form-label fw-semibold text-primary-light text-sm mb-8">Detail Alamat</label>
-                                                    <input type="text" class="form-control radius-8" value="{{ $mitras->alamat->detail_alamat}}" disabled
+                                                        class="form-label fw-semibold text-primary-light text-sm mb-8">Tanggungan</label>
+                                                    <input type="text" class="form-control radius-8" value="{{ $debt->jumlah}}" disabled
                                                         placeholder="Enter Event Title ">
                                                 </div>
                                                 <div class="col-12 mb-20">
@@ -520,26 +434,26 @@
                                                     <div class="d-flex align-items-center flex-wrap gap-28">
                                                         <div
                                                             class="form-check form-radio d-flex align-items-center gap-2 mb-0">
-                                                            <input type="radio" name="status" id="Personal" value="1"
-                                                                class="form-check-input" {{ $mitras->status_mitra == '1' ? 'checked' : '' }}>
+                                                            <input type="radio" name="status" id="Personal" value="tunai"
+                                                                class="form-check-input" {{ $debt->transaksi->jenis_pembayaran == 'tunai' ? 'checked' : '' }}>
                                                             <label
                                                                 class="form-check-label min-width-max-content line-height-1 fw-medium text-secondary-light text-sm d-flex align-items-center gap-1 ps-4"
                                                                 for="Personal">
                                                                 <span
                                                                     class="w-8-px h-8-px bg-success-600 rounded-circle"></span>
-                                                                Aktif
+                                                                Lunas
                                                             </label>
                                                         </div>
                                                         <div
                                                             class="form-check form-radio d-flex align-items-center gap-2 mb-0">
-                                                            <input type="radio" name="status" id="Business" value="0"
-                                                                class="form-check-input" {{ $mitras->status_mitra == '0' ? 'checked' : '' }}>
+                                                            <input type="radio" name="status" id="Business" value="DP"
+                                                                class="form-check-input" {{ $debt->transaksi->jenis_pembayaran == 'DP' ? 'checked' : '' }}>
                                                             <label
                                                                 class="form-check-label min-width-max-content line-height-1 fw-medium text-secondary-light text-sm d-flex align-items-center gap-1 ps-4"
                                                                 for="Business">
                                                                 <span
                                                                     class="w-8-px h-8-px bg-primary-600 rounded-circle"></span>
-                                                                NonAktif
+                                                                Belum lunas
                                                             </label>
                                                         </div>
 
@@ -604,68 +518,6 @@
 
 
             <script>
-                // ========================== Export Js Start ==============================
-                document.getElementById('exportOptions').addEventListener('change', function() {
-                    const format = this.value;
-                    const table = document.getElementById('studentTable');
-                    let data = [];
-                    const headers = [];
-
-                    // Get the table headers
-                    table.querySelectorAll('thead th').forEach(th => {
-                        headers.push(th.innerText.trim());
-                    });
-
-                    // Get the table rows
-                    table.querySelectorAll('tbody tr').forEach(tr => {
-                        const row = {};
-                        tr.querySelectorAll('td').forEach((td, index) => {
-                            row[headers[index]] = td.innerText.trim();
-                        });
-                        data.push(row);
-                    });
-
-                    if (format === 'csv') {
-                        downloadCSV(data);
-                    } else if (format === 'json') {
-                        downloadJSON(data);
-                    }
-                });
-
-                function downloadCSV(data) {
-                    const csv = data.map(row => Object.values(row).join(',')).join('\n');
-                    const blob = new Blob([csv], {
-                        type: 'text/csv'
-                    });
-                    const url = URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.download = 'students.csv';
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                }
-
-                function downloadJSON(data) {
-                    const json = JSON.stringify(data, null, 2);
-                    const blob = new Blob([json], {
-                        type: 'application/json'
-                    });
-                    const url = URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.download = 'students.json';
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                }
-                // ========================== Export Js End ==============================
-
-                // Table Header Checkbox checked all js Start
-                $('#selectAll').on('change', function() {
-                    $('.form-check .form-check-input').prop('checked', $(this).prop('checked'));
-                });
-
                 // Data Tables
                 new DataTable('#studentTable', {
                     searching: false,
@@ -674,7 +526,7 @@
                     paging: false, // Pagination False
                     "columnDefs": [{
                             "orderable": false,
-                            "targets": [0, 5]
+                            "targets": [0, 4]
                         } // Disables sorting on the 7th column (index 6)
                     ]
                 });
@@ -688,7 +540,7 @@
                         kecamatanSelect.innerHTML = '<option value="">Memuat...</option>';
 
                         if (kabupatenId) {
-                            fetch(`/admin/get-kecamatan/${kabupatenId}`)
+                            fetch(`/owner/get-kecamatan/${kabupatenId}`)
                                 .then(response => response.json())
                                 .then(data => {
                                     kecamatanSelect.innerHTML = '<option value="">Pilih Kecamatan</option>';
