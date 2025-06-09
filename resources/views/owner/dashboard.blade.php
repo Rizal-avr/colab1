@@ -311,59 +311,66 @@
                     <div class="col-xxl-3 col-sm-6">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="mb-2">155+</h4>
-                                <span class="text-gray-600">Completed Courses</span>
+                                <h4 class="mb-2">
+                                    Rp {{ number_format($totalPembelian, 0, ',', '.') }}
+                                </h4>
+                                <span class="text-gray-600">Total Pembelian</span>
                                 <div class="flex-between gap-8 mt-16">
-                                    <span
-                                        class="flex-shrink-0 w-48 h-48 flex-center rounded-circle bg-main-600 text-white text-2xl"><i
-                                            class="ph-fill ph-book-open"></i></span>
-                                    <div id="complete-course" class="remove-tooltip-title rounded-tooltip-value">
-                                    </div>
+                                    <span class="flex-shrink-0 w-48 h-48 flex-center rounded-circle bg-main-600 text-white text-2xl">
+                                        <i class="ph-fill ph-book-open"></i>
+                                    </span>
+                                    <div id="complete-course" class="remove-tooltip-title rounded-tooltip-value"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-xxl-3 col-sm-6">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="mb-2">39+</h4>
-                                <span class="text-gray-600">Earned Certificate</span>
+                                <h4 class="mb-2">
+                                    Rp {{ number_format($totalPenjualan, 0, ',', '.') }}
+                                </h4>
+                                <span class="text-gray-600">Total Penjualan</span>
                                 <div class="flex-between gap-8 mt-16">
-                                    <span
-                                        class="flex-shrink-0 w-48 h-48 flex-center rounded-circle bg-main-two-600 text-white text-2xl"><i
-                                            class="ph-fill ph-certificate"></i></span>
-                                    <div id="earned-certificate"
-                                        class="remove-tooltip-title rounded-tooltip-value"></div>
+                                    <span class="flex-shrink-0 w-48 h-48 flex-center rounded-circle bg-main-600 text-white text-2xl">
+                                        <i class="ph-fill ph-book-open"></i>
+                                    </span>
+                                    <div id="complete-course" class="remove-tooltip-title rounded-tooltip-value"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-xxl-3 col-sm-6">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="mb-2">25+</h4>
-                                <span class="text-gray-600">Course in Progress</span>
+                                <h4 class="mb-2">
+                                    Rp {{ number_format($debt, 0, ',', '.') }}
+                                </h4>
+                                <span class="text-gray-600">Total Hutang Pelanggan</span>
                                 <div class="flex-between gap-8 mt-16">
-                                    <span
-                                        class="flex-shrink-0 w-48 h-48 flex-center rounded-circle bg-purple-600 text-white text-2xl">
-                                        <i class="ph-fill ph-graduation-cap"></i></span>
-                                    <div id="course-progress" class="remove-tooltip-title rounded-tooltip-value">
-                                    </div>
+                                    <span class="flex-shrink-0 w-48 h-48 flex-center rounded-circle bg-main-600 text-white text-2xl">
+                                        <i class="ph-fill ph-book-open"></i>
+                                    </span>
+                                    <div id="complete-course" class="remove-tooltip-title rounded-tooltip-value"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-xxl-3 col-sm-6">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="mb-2">18k+</h4>
-                                <span class="text-gray-600">Community Support</span>
+                                <h4 class="mb-2">
+                                    Rp {{ number_format($penghasilan, 0, ',', '.') }}
+                                </h4>
+                                <span class="text-gray-600">Total Penghasilan</span>
                                 <div class="flex-between gap-8 mt-16">
-                                    <span
-                                        class="flex-shrink-0 w-48 h-48 flex-center rounded-circle bg-warning-600 text-white text-2xl"><i
-                                            class="ph-fill ph-users-three"></i></span>
-                                    <div id="community-support"
-                                        class="remove-tooltip-title rounded-tooltip-value"></div>
+                                    <span class="flex-shrink-0 w-48 h-48 flex-center rounded-circle bg-main-600 text-white text-2xl">
+                                        <i class="ph-fill ph-book-open"></i>
+                                    </span>
+                                    <div id="complete-course" class="remove-tooltip-title rounded-tooltip-value"></div>
                                 </div>
                             </div>
                         </div>
@@ -400,184 +407,13 @@
 
                     </div>
                 </div>
-                <!-- Top Course End -->
-
-                <!-- Top Course Start -->
-                <div class="card mt-24">
-                    <div class="card-body">
-                        <div class="mb-20 flex-between flex-wrap gap-8">
-                            <h4 class="mb-0">Top Courses Pick for You</h4>
-                            <a href="student-courses.html"
-                                class="text-13 fw-medium text-main-600 hover-text-decoration-underline">See All</a>
-                        </div>
-
-                        <div class="row g-20">
-                            <div class="col-lg-4 col-sm-6">
-                                <div class="card border border-gray-100">
-                                    <div class="card-body p-8">
-                                        <a href="course-details.html"
-                                            class="bg-main-100 rounded-8 overflow-hidden text-center mb-8 h-164 flex-center p-8">
-                                            <img src="assets/images/thumbs/course-img1.png" alt="Course Image">
-                                        </a>
-                                        <div class="p-8">
-                                            <span
-                                                class="text-13 py-2 px-10 rounded-pill bg-success-50 text-success-600 mb-16">Development</span>
-                                            <h5 class="mb-0"><a href="course-details.html"
-                                                    class="hover-text-main-600">Full Stack Web Development</a></h5>
-
-                                            <div class="flex-align gap-8 flex-wrap mt-16">
-                                                <img src="assets/images/thumbs/user-img1.png"
-                                                    class="w-28 h-28 rounded-circle object-fit-cover"
-                                                    alt="User Image">
-                                                <div>
-                                                    <span class="text-gray-600 text-13">Created by <a
-                                                            href="profile.html"
-                                                            class="fw-semibold text-gray-700 hover-text-main-600 hover-text-decoration-underline">Albert
-                                                            James</a> </span>
-                                                </div>
-                                            </div>
-
-                                            <div class="flex-align gap-8 mt-12 pt-12 border-top border-gray-100">
-                                                <div class="flex-align gap-4">
-                                                    <span class="text-sm text-main-600 d-flex"><i
-                                                            class="ph ph-video-camera"></i></span>
-                                                    <span class="text-13 text-gray-600">24 Lesson</span>
-                                                </div>
-                                                <div class="flex-align gap-4">
-                                                    <span class="text-sm text-main-600 d-flex"><i
-                                                            class="ph ph-clock"></i></span>
-                                                    <span class="text-13 text-gray-600">40 Hours</span>
-                                                </div>
-                                            </div>
-
-                                            <div class="flex-between gap-4 flex-wrap mt-24">
-                                                <div class="flex-align gap-4">
-                                                    <span class="text-15 fw-bold text-warning-600 d-flex"><i
-                                                            class="ph-fill ph-star"></i></span>
-                                                    <span class="text-13 fw-bold text-gray-600">4.9</span>
-                                                    <span class="text-13 fw-bold text-gray-600">(12k)</span>
-                                                </div>
-                                                <a href="course-details.html"
-                                                    class="btn btn-outline-main rounded-pill py-9">View Details</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <div class="card border border-gray-100">
-                                    <div class="card-body p-8">
-                                        <a href="course-details.html"
-                                            class="bg-main-100 rounded-8 overflow-hidden text-center mb-8 h-164 flex-center p-8">
-                                            <img src="assets/images/thumbs/course-img5.png" alt="Course Image">
-                                        </a>
-                                        <div class="p-8">
-                                            <span
-                                                class="text-13 py-2 px-10 rounded-pill bg-warning-50 text-warning-600 mb-16">Design</span>
-                                            <h5 class="mb-0"><a href="course-details.html"
-                                                    class="hover-text-main-600">Design System</a></h5>
-
-                                            <div class="flex-align gap-8 flex-wrap mt-16">
-                                                <img src="assets/images/thumbs/user-img5.png"
-                                                    class="w-28 h-28 rounded-circle object-fit-cover"
-                                                    alt="User Image">
-                                                <div>
-                                                    <span class="text-gray-600 text-13">Created by <a
-                                                            href="profile.html"
-                                                            class="fw-semibold text-gray-700 hover-text-main-600 hover-text-decoration-underline">Albert
-                                                            James</a> </span>
-                                                </div>
-                                            </div>
-
-                                            <div class="flex-align gap-8 mt-12 pt-12 border-top border-gray-100">
-                                                <div class="flex-align gap-4">
-                                                    <span class="text-sm text-main-600 d-flex"><i
-                                                            class="ph ph-video-camera"></i></span>
-                                                    <span class="text-13 text-gray-600">24 Lesson</span>
-                                                </div>
-                                                <div class="flex-align gap-4">
-                                                    <span class="text-sm text-main-600 d-flex"><i
-                                                            class="ph ph-clock"></i></span>
-                                                    <span class="text-13 text-gray-600">40 Hours</span>
-                                                </div>
-                                            </div>
-
-                                            <div class="flex-between gap-4 flex-wrap mt-24">
-                                                <div class="flex-align gap-4">
-                                                    <span class="text-15 fw-bold text-warning-600 d-flex"><i
-                                                            class="ph-fill ph-star"></i></span>
-                                                    <span class="text-13 fw-bold text-gray-600">4.9</span>
-                                                    <span class="text-13 fw-bold text-gray-600">(12k)</span>
-                                                </div>
-                                                <a href="course-details.html"
-                                                    class="btn btn-outline-main rounded-pill py-9">View Details</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <div class="card border border-gray-100">
-                                    <div class="card-body p-8">
-                                        <a href="course-details.html"
-                                            class="bg-main-100 rounded-8 overflow-hidden text-center mb-8 h-164 flex-center p-8">
-                                            <img src="assets/images/thumbs/course-img6.png" alt="Course Image">
-                                        </a>
-                                        <div class="p-8">
-                                            <span
-                                                class="text-13 py-2 px-10 rounded-pill bg-danger-50 text-danger-600 mb-16">Frontend</span>
-                                            <h5 class="mb-0"><a href="course-details.html"
-                                                    class="hover-text-main-600">React Native Courese</a></h5>
-
-                                            <div class="flex-align gap-8 flex-wrap mt-16">
-                                                <img src="assets/images/thumbs/user-img6.png"
-                                                    class="w-28 h-28 rounded-circle object-fit-cover"
-                                                    alt="User Image">
-                                                <div>
-                                                    <span class="text-gray-600 text-13">Created by <a
-                                                            href="profile.html"
-                                                            class="fw-semibold text-gray-700 hover-text-main-600 hover-text-decoration-underline">Albert
-                                                            James</a> </span>
-                                                </div>
-                                            </div>
-
-                                            <div class="flex-align gap-8 mt-12 pt-12 border-top border-gray-100">
-                                                <div class="flex-align gap-4">
-                                                    <span class="text-sm text-main-600 d-flex"><i
-                                                            class="ph ph-video-camera"></i></span>
-                                                    <span class="text-13 text-gray-600">24 Lesson</span>
-                                                </div>
-                                                <div class="flex-align gap-4">
-                                                    <span class="text-sm text-main-600 d-flex"><i
-                                                            class="ph ph-clock"></i></span>
-                                                    <span class="text-13 text-gray-600">40 Hours</span>
-                                                </div>
-                                            </div>
-
-                                            <div class="flex-between gap-4 flex-wrap mt-24">
-                                                <div class="flex-align gap-4">
-                                                    <span class="text-15 fw-bold text-warning-600 d-flex"><i
-                                                            class="ph-fill ph-star"></i></span>
-                                                    <span class="text-13 fw-bold text-gray-600">4.9</span>
-                                                    <span class="text-13 fw-bold text-gray-600">(12k)</span>
-                                                </div>
-                                                <a href="course-details.html"
-                                                    class="btn btn-outline-main rounded-pill py-9">View Details</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Top Course End -->
             </div>
 
             <div class="col-lg-3">
                 <!-- Calendar Start -->
                 <div class="card">
                     <div class="card-body">
+                        <!-- before -->
                         <div class="calendar">
                             <div class="calendar__header">
                                 <button type="button" class="calendar__arrow left"><i
@@ -596,491 +432,520 @@
                                 <div class="calendar__week-text">Fr</div>
                                 <div class="calendar__week-text">Sa</div>
                             </div>
-                            <div class="days"></div>
+                            <!-- <div class="days"></div> -->
+                            <div class="days" id="calendar-days"></div>
                         </div>
-                    </div>
-                </div>
-                <!-- Calendar End -->
 
-                <!-- Assignment Start -->
-                <div class="card mt-24">
-                    <div class="card-body">
-                        <div class="mb-20 flex-between flex-wrap gap-8">
-                            <h4 class="mb-0">Assignments</h4>
-                            <a href="assignment.html"
-                                class="text-13 fw-medium text-main-600 hover-text-decoration-underline">See All</a>
-                        </div>
-                        <div
-                            class="p-xl-4 py-16 px-12 flex-between gap-8 rounded-8 border border-gray-100 hover-border-gray-200 transition-1 mb-16">
-                            <div class="flex-align flex-wrap gap-8">
-                                <span
-                                    class="text-main-600 bg-main-50 w-44 h-44 rounded-circle flex-center text-2xl flex-shrink-0"><i
-                                        class="ph-fill ph-graduation-cap"></i></span>
-                                <div>
-                                    <h6 class="mb-0">Do The Research</h6>
-                                    <span class="text-13 text-gray-400">Due in 9 days</span>
-                                </div>
-                            </div>
-                            <a href="assignment.html" class="text-gray-900 hover-text-main-600"><i
-                                    class="ph ph-caret-right"></i></a>
-                        </div>
-                        <div
-                            class="p-xl-4 py-16 px-12 flex-between gap-8 rounded-8 border border-gray-100 hover-border-gray-200 transition-1 mb-16">
-                            <div class="flex-align flex-wrap gap-8">
-                                <span
-                                    class="text-main-600 bg-main-50 w-44 h-44 rounded-circle flex-center text-2xl flex-shrink-0"><i
-                                        class="ph ph-code"></i></span>
-                                <div>
-                                    <h6 class="mb-0">PHP Dvelopment</h6>
-                                    <span class="text-13 text-gray-400">Due in 2 days</span>
-                                </div>
-                            </div>
-                            <a href="assignment.html" class="text-gray-900 hover-text-main-600"><i
-                                    class="ph ph-caret-right"></i></a>
-                        </div>
-                        <div
-                            class="p-xl-4 py-16 px-12 flex-between gap-8 rounded-8 border border-gray-100 hover-border-gray-200 transition-1">
-                            <div class="flex-align flex-wrap gap-8">
-                                <span
-                                    class="text-main-600 bg-main-50 w-44 h-44 rounded-circle flex-center text-2xl flex-shrink-0"><i
-                                        class="ph ph-bezier-curve"></i></span>
-                                <div>
-                                    <h6 class="mb-0">Graphic Design</h6>
-                                    <span class="text-13 text-gray-400">Due in 5 days</span>
-                                </div>
-                            </div>
-                            <a href="assignment.html" class="text-gray-900 hover-text-main-600"><i
-                                    class="ph ph-caret-right"></i></a>
-                        </div>
                     </div>
-                </div>
-                <!-- Assignment End -->
 
-                <!-- Progress Bar Start -->
-                <div class="card mt-24">
-                    <div class="card-header border-bottom border-gray-100">
-                        <h5 class="mb-0">My Progress</h5>
-                    </div>
-                    <div class="card-body">
-                        <div id="radialMultipleBar"></div>
-
-                        <div class="">
-                            <h6 class="text-lg mb-16 text-center"> <span class="text-gray-400">Total hour:</span>
-                                6h 32 min</h6>
-                            <div class="flex-between gap-8 flex-wrap">
-                                <div class="flex-align flex-column">
-                                    <h6 class="mb-6">60/60</h6>
-                                    <span class="w-30 h-3 rounded-pill bg-main-600"></span>
-                                    <span class="text-13 mt-6 text-gray-600">Completed</span>
-                                </div>
-                                <div class="flex-align flex-column">
-                                    <h6 class="mb-6">60/60</h6>
-                                    <span class="w-30 h-3 rounded-pill bg-main-two-600"></span>
-                                    <span class="text-13 mt-6 text-gray-600">Completed</span>
-                                </div>
-                                <div class="flex-align flex-column">
-                                    <h6 class="mb-6">60/60</h6>
-                                    <span class="w-30 h-3 rounded-pill bg-gray-500"></span>
-                                    <span class="text-13 mt-6 text-gray-600">Completed</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                <!-- Progress bar end -->
             </div>
-
         </div>
     </div>
+</div>
 
+<script>
+    const calendarDays = document.querySelector('.days');
+    const monthYearDisplay = document.querySelector('.calendar__header .display');
+    const leftArrow = document.querySelector('.calendar__arrow.left');
+    const rightArrow = document.querySelector('.calendar__arrow.right');
 
-    <!-- Jquery js -->
-    <script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}"></script>
-    <!-- Bootstrap Bundle Js -->
-    <script src="{{ asset('assets/js/boostrap.bundle.min.js') }}"></script>
-    <!-- Phosphor Js -->
-    <script src="{{ asset('assets/js/phosphor-icon.js') }}"></script>
-    <!-- file upload -->
-    <script src="{{ asset('assets/js/file-upload.js') }}"></script>
-    <!-- file upload -->
-    <script src="{{ asset('assets/js/plyr.js') }}"></script>
-    <!-- dataTables -->
-    <script src="{{ asset('https://cdn.datatables.net/2.0.8/js/dataTables.min.js') }}"></script>
-    <!-- full calendar -->
-    <script src="{{ asset('assets/js/full-calendar.js') }}"></script>
-    <!-- jQuery UI -->
-    <script src="{{ asset('assets/js/jquery-ui.js') }}"></script>
-    <!-- jQuery UI -->
-    <script src="{{ asset('assets/js/editor-quill.js') }}"></script>
-    <!-- apex charts -->
-    <script src="{{ asset('assets/js/apexcharts.min.js') }}"></script>
-    <!-- Calendar Js -->
-    <script src="{{ asset('assets/js/calendar.js') }}"></script>
-    <!-- jvectormap Js -->
-    <script src="{{ asset('assets/js/jquery-jvectormap-2.0.5.min.js') }}"></script>
-    <!-- jvectormap world Js -->
-    <script src="{{ asset('assets/js/jquery-jvectormap-world-mill-en.js') }}"></script>
+    // let currentDate = new Date();
 
-    <!-- main js -->
-    <script src="{{ asset('assets/js/main.js') }}"></script>
+    function getUrlParams() {
+        const params = new URLSearchParams(window.location.search);
+        const month = parseInt(params.get('bulan'));
+        const year = parseInt(params.get('tahun'));
 
-
-
-
-    <script>
-        function createChart(chartId, chartColor) {
-
-            let currentYear = new Date().getFullYear();
-
-            var options = {
-                series: [{
-                    name: 'series1',
-                    data: [18, 25, 22, 40, 34, 55, 50, 60, 55, 65],
-                }, ],
-                chart: {
-                    type: 'area',
-                    width: 80,
-                    height: 42,
-                    sparkline: {
-                        enabled: true // Remove whitespace
-                    },
-
-                    toolbar: {
-                        show: false
-                    },
-                    padding: {
-                        left: 0,
-                        right: 0,
-                        top: 0,
-                        bottom: 0
-                    }
-                },
-                dataLabels: {
-                    enabled: false
-                },
-                stroke: {
-                    curve: 'smooth',
-                    width: 1,
-                    colors: [chartColor],
-                    lineCap: 'round'
-                },
-                grid: {
-                    show: true,
-                    borderColor: 'transparent',
-                    strokeDashArray: 0,
-                    position: 'back',
-                    xaxis: {
-                        lines: {
-                            show: false
-                        }
-                    },
-                    yaxis: {
-                        lines: {
-                            show: false
-                        }
-                    },
-                    row: {
-                        colors: undefined,
-                        opacity: 0.5
-                    },
-                    column: {
-                        colors: undefined,
-                        opacity: 0.5
-                    },
-                    padding: {
-                        top: 0,
-                        right: 0,
-                        bottom: 0,
-                        left: 0
-                    },
-                },
-                fill: {
-                    type: 'gradient',
-                    colors: [chartColor], // Set the starting color (top color) here
-                    gradient: {
-                        shade: 'light', // Gradient shading type
-                        type: 'vertical', // Gradient direction (vertical)
-                        shadeIntensity: 0.5, // Intensity of the gradient shading
-                        gradientToColors: [`${chartColor}00`], // Bottom gradient color (with transparency)
-                        inverseColors: false, // Do not invert colors
-                        opacityFrom: .5, // Starting opacity
-                        opacityTo: 0.3, // Ending opacity
-                        stops: [0, 100],
-                    },
-                },
-                // Customize the circle marker color on hover
-                markers: {
-                    colors: [chartColor],
-                    strokeWidth: 2,
-                    size: 0,
-                    hover: {
-                        size: 8
-                    }
-                },
-                xaxis: {
-                    labels: {
-                        show: false
-                    },
-                    categories: [`Jan ${currentYear}`, `Feb ${currentYear}`, `Mar ${currentYear}`, `Apr ${currentYear}`,
-                        `May ${currentYear}`, `Jun ${currentYear}`, `Jul ${currentYear}`, `Aug ${currentYear}`,
-                        `Sep ${currentYear}`, `Oct ${currentYear}`, `Nov ${currentYear}`, `Dec ${currentYear}`
-                    ],
-                    tooltip: {
-                        enabled: false,
-                    },
-                },
-                yaxis: {
-                    labels: {
-                        show: false
-                    }
-                },
-                tooltip: {
-                    x: {
-                        format: 'dd/MM/yy HH:mm'
-                    },
-                },
-            };
-
-            var chart = new ApexCharts(document.querySelector(`#${chartId}`), options);
-            chart.render();
+        if (!isNaN(month) && !isNaN(year)) {
+            return new Date(year, month - 1); // bulan dimulai dari 0
         }
 
-        // Call the function for each chart with the desired ID and color
-        createChart('complete-course', '#2FB2AB');
-        createChart('earned-certificate', '#27CFA7');
-        createChart('course-progress', '#6142FF');
-        createChart('community-support', '#FA902F');
+        return new Date(); // fallback ke hari ini
+    }
+
+    let currentDate = getUrlParams(); // GANTI inisialisasi awal
+
+    function renderCalendar(date) {
+        const year = date.getFullYear();
+        const month = date.getMonth(); // 0 - Jan
+        const firstDay = new Date(year, month, 1);
+        const lastDay = new Date(year, month + 1, 0);
+        const today = new Date();
+
+        calendarDays.innerHTML = ''; // kosongkan
+
+        // Update header
+        monthYearDisplay.textContent = `${date.toLocaleString('default', { month: 'long' })} ${year}`;
+
+        // Tambah padding kosong sebelum tanggal mulai
+        for (let i = 0; i < firstDay.getDay(); i++) {
+            const emptyDiv = document.createElement('div');
+            calendarDays.appendChild(emptyDiv);
+        }
+
+        // Tambah tanggal
+        for (let day = 1; day <= lastDay.getDate(); day++) {
+            const dayDiv = document.createElement('div');
+            const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+            dayDiv.textContent = day;
+            dayDiv.classList.add('day');
+            dayDiv.setAttribute('data-date', dateStr);
+
+            // Tandai hari ini
+            if (
+                today.getDate() === day &&
+                today.getMonth() === month &&
+                today.getFullYear() === year
+            ) {
+                dayDiv.classList.add('today');
+            }
+
+            calendarDays.appendChild(dayDiv);
+        }
+    }
+
+    // Render awal
+    renderCalendar(currentDate);
+
+    // Navigasi bulan
+    // leftArrow.addEventListener('click', () => {
+    //     currentDate.setMonth(currentDate.getMonth() - 1);
+    //     renderCalendar(currentDate);
+    //     updateMonthlyURL(currentDate); // tambahkan
+    // });
+    leftArrow.addEventListener('click', () => {
+        currentDate.setDate(1); // ← Tambahkan ini
+        currentDate.setMonth(currentDate.getMonth() - 1);
+        renderCalendar(currentDate);
+        updateMonthlyURL(currentDate);
+    });
+
+    // rightArrow.addEventListener('click', () => {
+    //     currentDate.setMonth(currentDate.getMonth() + 1);
+    //     renderCalendar(currentDate);
+    //     updateMonthlyURL(currentDate); // tambahkan
+    // });
+    rightArrow.addEventListener('click', () => {
+        currentDate.setDate(1); // ← Tambahkan ini
+        currentDate.setMonth(currentDate.getMonth() + 1);
+        renderCalendar(currentDate);
+        updateMonthlyURL(currentDate);
+    });
 
 
-        // =========================== Double Line Chart Start ===============================
-        function createLineChart(chartId, chartColor) {
-            var options = {
-                series: [{
-                        name: 'Study',
-                        data: [8, 15, 9, 20, 10, 33, 13, 22, 8, 17, 10, 15],
-                    },
-                    {
-                        name: 'Test',
-                        data: [8, 24, 18, 40, 18, 48, 22, 38, 18, 30, 20, 28],
-                    },
-                ],
-                chart: {
-                    type: 'area',
-                    width: '100%',
-                    height: 300,
-                    sparkline: {
-                        enabled: false // Remove whitespace
-                    },
-                    toolbar: {
+    // Klik tanggal untuk filter
+    calendarDays.addEventListener('click', function(e) {
+        if (e.target.classList.contains('day')) {
+            const selectedDate = e.target.dataset.date;
+            const url = new URL(window.location.href);
+            url.searchParams.set('tanggal', selectedDate);
+            window.location.href = url.toString();
+        }
+    });
+
+    function updateMonthlyURL(date) {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0'); // bulan 1-12
+        updateMonthlySummary(month, year); // pakai AJAX, tidak reload
+
+        const url = new URL(window.location.href);
+        url.searchParams.set('bulan', month);
+        url.searchParams.set('tahun', year);
+        window.location.href = url.toString();
+    }
+</script>
+
+
+<script src="{{ asset('assets/js/kalender.js') }}"></script>
+
+<!-- Jquery js -->
+<script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}"></script>
+<!-- Bootstrap Bundle Js -->
+<script src="{{ asset('assets/js/boostrap.bundle.min.js') }}"></script>
+<!-- Phosphor Js -->
+<script src="{{ asset('assets/js/phosphor-icon.js') }}"></script>
+<!-- file upload -->
+<script src="{{ asset('assets/js/file-upload.js') }}"></script>
+<!-- file upload -->
+<script src="{{ asset('assets/js/plyr.js') }}"></script>
+<!-- dataTables -->
+<script src="{{ asset('https://cdn.datatables.net/2.0.8/js/dataTables.min.js') }}"></script>
+<!-- full calendar -->
+<script src="{{ asset('assets/js/full-calendar.js') }}"></script>
+<!-- jQuery UI -->
+<script src="{{ asset('assets/js/jquery-ui.js') }}"></script>
+<!-- jQuery UI -->
+<script src="{{ asset('assets/js/editor-quill.js') }}"></script>
+<!-- apex charts -->
+<script src="{{ asset('assets/js/apexcharts.min.js') }}"></script>
+<!-- Calendar Js -->
+<!-- <script src="{{ asset('assets/js/calendar.js') }}"></script> -->
+<!-- jvectormap Js -->
+<script src="{{ asset('assets/js/jquery-jvectormap-2.0.5.min.js') }}"></script>
+<!-- jvectormap world Js -->
+<script src="{{ asset('assets/js/jquery-jvectormap-world-mill-en.js') }}"></script>
+
+<!-- main js -->
+<script src="{{ asset('assets/js/main.js') }}"></script>
+
+
+
+
+<script>
+    function createChart(chartId, chartColor) {
+
+        let currentYear = new Date().getFullYear();
+
+        var options = {
+            series: [{
+                name: 'series1',
+                data: [18, 25, 22, 40, 34, 55, 50, 60, 55, 65],
+            }, ],
+            chart: {
+                type: 'area',
+                width: 80,
+                height: 42,
+                sparkline: {
+                    enabled: true // Remove whitespace
+                },
+
+                toolbar: {
+                    show: false
+                },
+                padding: {
+                    left: 0,
+                    right: 0,
+                    top: 0,
+                    bottom: 0
+                }
+            },
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                curve: 'smooth',
+                width: 1,
+                colors: [chartColor],
+                lineCap: 'round'
+            },
+            grid: {
+                show: true,
+                borderColor: 'transparent',
+                strokeDashArray: 0,
+                position: 'back',
+                xaxis: {
+                    lines: {
                         show: false
-                    },
-                    padding: {
-                        left: 0,
-                        right: 0,
-                        top: 0,
-                        bottom: 0
                     }
                 },
-                colors: ['#3D7FF9', chartColor], // Set the color of the series
-                dataLabels: {
+                yaxis: {
+                    lines: {
+                        show: false
+                    }
+                },
+                row: {
+                    colors: undefined,
+                    opacity: 0.5
+                },
+                column: {
+                    colors: undefined,
+                    opacity: 0.5
+                },
+                padding: {
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
+                    left: 0
+                },
+            },
+            fill: {
+                type: 'gradient',
+                colors: [chartColor], // Set the starting color (top color) here
+                gradient: {
+                    shade: 'light', // Gradient shading type
+                    type: 'vertical', // Gradient direction (vertical)
+                    shadeIntensity: 0.5, // Intensity of the gradient shading
+                    gradientToColors: [`${chartColor}00`], // Bottom gradient color (with transparency)
+                    inverseColors: false, // Do not invert colors
+                    opacityFrom: .5, // Starting opacity
+                    opacityTo: 0.3, // Ending opacity
+                    stops: [0, 100],
+                },
+            },
+            // Customize the circle marker color on hover
+            markers: {
+                colors: [chartColor],
+                strokeWidth: 2,
+                size: 0,
+                hover: {
+                    size: 8
+                }
+            },
+            xaxis: {
+                labels: {
+                    show: false
+                },
+                categories: [`Jan ${currentYear}`, `Feb ${currentYear}`, `Mar ${currentYear}`, `Apr ${currentYear}`,
+                    `May ${currentYear}`, `Jun ${currentYear}`, `Jul ${currentYear}`, `Aug ${currentYear}`,
+                    `Sep ${currentYear}`, `Oct ${currentYear}`, `Nov ${currentYear}`, `Dec ${currentYear}`
+                ],
+                tooltip: {
                     enabled: false,
                 },
-                stroke: {
-                    curve: 'smooth',
-                    width: 1,
-                    colors: ["#3D7FF9", chartColor],
-                    lineCap: 'round',
-                },
-                fill: {
-                    type: 'gradient',
-                    gradient: {
-                        shadeIntensity: 1,
-                        opacityFrom: 0.9, // Decrease this value to reduce opacity
-                        opacityTo: 0.2, // Decrease this value to reduce opacity
-                        stops: [0, 100]
-                    }
-                },
-                grid: {
-                    show: true,
-                    borderColor: '#E6E6E6',
-                    strokeDashArray: 3,
-                    position: 'back',
-                    xaxis: {
-                        lines: {
-                            show: false
-                        }
-                    },
-                    yaxis: {
-                        lines: {
-                            show: true
-                        }
-                    },
-                    row: {
-                        colors: undefined,
-                        opacity: 0.5
-                    },
-                    column: {
-                        colors: undefined,
-                        opacity: 0.5
-                    },
-                    padding: {
-                        top: 0,
-                        right: 0,
-                        bottom: 0,
-                        left: 0
-                    },
-                },
-                // Customize the circle marker color on hover
-                markers: {
-                    colors: ["#3D7FF9", chartColor],
-                    strokeWidth: 3,
-                    size: 0,
-                    hover: {
-                        size: 8
-                    }
-                },
-                xaxis: {
-                    labels: {
-                        show: false
-                    },
-                    categories: [`Jan`, `Feb`, `Mar`, `Apr`, `May`, `Jun`, `Jul`, `Aug`, `Sep`, `Oct`, `Nov`, `Dec`],
-                    tooltip: {
-                        enabled: false,
-                    },
-                    labels: {
-                        formatter: function(value) {
-                            return value;
-                        },
-                        style: {
-                            fontSize: "14px"
-                        }
-                    },
-                },
-                yaxis: {
-                    labels: {
-                        formatter: function(value) {
-                            return "$" + value + "Hr";
-                        },
-                        style: {
-                            fontSize: "14px"
-                        }
-                    },
-                },
-                tooltip: {
-                    x: {
-                        format: 'dd/MM/yy HH:mm'
-                    },
-                },
-                legend: {
-                    show: false,
-                    position: 'top',
-                    horizontalAlign: 'right',
-                    offsetX: -10,
-                    offsetY: -0
-                }
-            };
-
-            var chart = new ApexCharts(document.querySelector(`#${chartId}`), options);
-            chart.render();
-        }
-        createLineChart('doubleLineChart', '#27CFA7');
-        // =========================== Double Line Chart End ===============================
-
-        // ================================= Multiple Radial Bar Chart Start =============================
-        var options = {
-            series: [100, 60, 25],
-            chart: {
-                height: 172,
-                type: 'radialBar',
             },
-            colors: ['#3D7FF9', '#27CFA7', '#020203'],
-            stroke: {
-                lineCap: 'round',
-            },
-            plotOptions: {
-                radialBar: {
-                    hollow: {
-                        size: '30%', // Adjust this value to control the bar width
-                    },
-                    dataLabels: {
-                        name: {
-                            fontSize: '16px',
-                        },
-                        value: {
-                            fontSize: '16px',
-                        },
-                        total: {
-                            show: true,
-                            formatter: function(w) {
-                                return '82%'
-                            }
-                        }
-                    }
+            yaxis: {
+                labels: {
+                    show: false
                 }
             },
-            labels: ['Completed', 'In Progress', 'Not Started'],
+            tooltip: {
+                x: {
+                    format: 'dd/MM/yy HH:mm'
+                },
+            },
         };
 
-        var chart = new ApexCharts(document.querySelector("#radialMultipleBar"), options);
+        var chart = new ApexCharts(document.querySelector(`#${chartId}`), options);
         chart.render();
-        // ================================= Multiple Radial Bar Chart End =============================
+    }
 
-        // ========================== Export Js Start ==============================
-        document.getElementById('exportOptions').addEventListener('change', function() {
-            const format = this.value;
-            const table = document.getElementById('studentTable');
-            let data = [];
-            const headers = [];
+    // Call the function for each chart with the desired ID and color
+    createChart('complete-course', '#2FB2AB');
+    createChart('earned-certificate', '#27CFA7');
+    createChart('course-progress', '#6142FF');
+    createChart('community-support', '#FA902F');
 
-            // Get the table headers
-            table.querySelectorAll('thead th').forEach(th => {
-                headers.push(th.innerText.trim());
-            });
 
-            // Get the table rows
-            table.querySelectorAll('tbody tr').forEach(tr => {
-                const row = {};
-                tr.querySelectorAll('td').forEach((td, index) => {
-                    row[headers[index]] = td.innerText.trim();
-                });
-                data.push(row);
-            });
-
-            if (format === 'csv') {
-                downloadCSV(data);
-            } else if (format === 'json') {
-                downloadJSON(data);
+    // =========================== Double Line Chart Start ===============================
+    function createLineChart(chartId, chartColor) {
+        var options = {
+            series: [{
+                    name: 'Study',
+                    data: [8, 15, 9, 20, 10, 33, 13, 22, 8, 17, 10, 15],
+                },
+                {
+                    name: 'Test',
+                    data: [8, 24, 18, 40, 18, 48, 22, 38, 18, 30, 20, 28],
+                },
+            ],
+            chart: {
+                type: 'area',
+                width: '100%',
+                height: 300,
+                sparkline: {
+                    enabled: false // Remove whitespace
+                },
+                toolbar: {
+                    show: false
+                },
+                padding: {
+                    left: 0,
+                    right: 0,
+                    top: 0,
+                    bottom: 0
+                }
+            },
+            colors: ['#3D7FF9', chartColor], // Set the color of the series
+            dataLabels: {
+                enabled: false,
+            },
+            stroke: {
+                curve: 'smooth',
+                width: 1,
+                colors: ["#3D7FF9", chartColor],
+                lineCap: 'round',
+            },
+            fill: {
+                type: 'gradient',
+                gradient: {
+                    shadeIntensity: 1,
+                    opacityFrom: 0.9, // Decrease this value to reduce opacity
+                    opacityTo: 0.2, // Decrease this value to reduce opacity
+                    stops: [0, 100]
+                }
+            },
+            grid: {
+                show: true,
+                borderColor: '#E6E6E6',
+                strokeDashArray: 3,
+                position: 'back',
+                xaxis: {
+                    lines: {
+                        show: false
+                    }
+                },
+                yaxis: {
+                    lines: {
+                        show: true
+                    }
+                },
+                row: {
+                    colors: undefined,
+                    opacity: 0.5
+                },
+                column: {
+                    colors: undefined,
+                    opacity: 0.5
+                },
+                padding: {
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
+                    left: 0
+                },
+            },
+            // Customize the circle marker color on hover
+            markers: {
+                colors: ["#3D7FF9", chartColor],
+                strokeWidth: 3,
+                size: 0,
+                hover: {
+                    size: 8
+                }
+            },
+            xaxis: {
+                labels: {
+                    show: false
+                },
+                categories: [`Jan`, `Feb`, `Mar`, `Apr`, `May`, `Jun`, `Jul`, `Aug`, `Sep`, `Oct`, `Nov`, `Dec`],
+                tooltip: {
+                    enabled: false,
+                },
+                labels: {
+                    formatter: function(value) {
+                        return value;
+                    },
+                    style: {
+                        fontSize: "14px"
+                    }
+                },
+            },
+            yaxis: {
+                labels: {
+                    formatter: function(value) {
+                        return "$" + value + "Hr";
+                    },
+                    style: {
+                        fontSize: "14px"
+                    }
+                },
+            },
+            tooltip: {
+                x: {
+                    format: 'dd/MM/yy HH:mm'
+                },
+            },
+            legend: {
+                show: false,
+                position: 'top',
+                horizontalAlign: 'right',
+                offsetX: -10,
+                offsetY: -0
             }
+        };
+
+        var chart = new ApexCharts(document.querySelector(`#${chartId}`), options);
+        chart.render();
+    }
+    createLineChart('doubleLineChart', '#27CFA7');
+    // =========================== Double Line Chart End ===============================
+
+    // ================================= Multiple Radial Bar Chart Start =============================
+    var options = {
+        series: [100, 60, 25],
+        chart: {
+            height: 172,
+            type: 'radialBar',
+        },
+        colors: ['#3D7FF9', '#27CFA7', '#020203'],
+        stroke: {
+            lineCap: 'round',
+        },
+        plotOptions: {
+            radialBar: {
+                hollow: {
+                    size: '30%', // Adjust this value to control the bar width
+                },
+                dataLabels: {
+                    name: {
+                        fontSize: '16px',
+                    },
+                    value: {
+                        fontSize: '16px',
+                    },
+                    total: {
+                        show: true,
+                        formatter: function(w) {
+                            return '82%'
+                        }
+                    }
+                }
+            }
+        },
+        labels: ['Completed', 'In Progress', 'Not Started'],
+    };
+
+    var chart = new ApexCharts(document.querySelector("#radialMultipleBar"), options);
+    chart.render();
+    // ================================= Multiple Radial Bar Chart End =============================
+
+    // ========================== Export Js Start ==============================
+    document.getElementById('exportOptions').addEventListener('change', function() {
+        const format = this.value;
+        const table = document.getElementById('studentTable');
+        let data = [];
+        const headers = [];
+
+        // Get the table headers
+        table.querySelectorAll('thead th').forEach(th => {
+            headers.push(th.innerText.trim());
         });
 
-        function downloadCSV(data) {
-            const csv = data.map(row => Object.values(row).join(',')).join('\n');
-            const blob = new Blob([csv], {
-                type: 'text/csv'
+        // Get the table rows
+        table.querySelectorAll('tbody tr').forEach(tr => {
+            const row = {};
+            tr.querySelectorAll('td').forEach((td, index) => {
+                row[headers[index]] = td.innerText.trim();
             });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'students.csv';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-        }
+            data.push(row);
+        });
 
-        function downloadJSON(data) {
-            const json = JSON.stringify(data, null, 2);
-            const blob = new Blob([json], {
-                type: 'application/json'
-            });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'students.json';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
+        if (format === 'csv') {
+            downloadCSV(data);
+        } else if (format === 'json') {
+            downloadJSON(data);
         }
-        // ========================== Export Js End ==============================
-    </script>
+    });
+
+    function downloadCSV(data) {
+        const csv = data.map(row => Object.values(row).join(',')).join('\n');
+        const blob = new Blob([csv], {
+            type: 'text/csv'
+        });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'students.csv';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
+
+    function downloadJSON(data) {
+        const json = JSON.stringify(data, null, 2);
+        const blob = new Blob([json], {
+            type: 'application/json'
+        });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'students.json';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
+    // ========================== Export Js End ==============================
+</script>
 
 @endsection

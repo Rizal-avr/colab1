@@ -338,16 +338,7 @@
                         </select>
                     </div>
                 </div>
-                <div
-                    class="flex-align text-gray-500 text-13 border border-gray-100 rounded-4 ps-20 focus-border-main-600 bg-white">
-                    <span class="text-lg"><i class="ph ph-layout"></i></span>
-                    <select class="form-control ps-8 pe-20 py-16 border-0 text-inherit rounded-4 text-center"
-                        id="exportOptions">
-                        <option value="" selected disabled>Export</option>
-                        <option value="csv">CSV</option>
-                        <option value="json">JSON</option>
-                    </select>
-                </div>
+                
             </div>
             <!-- Breadcrumb Right End -->
         </div>
@@ -381,10 +372,10 @@
                                     </select>
                                 </div>
                                 <div class="col-12 mb-20">
-                                    <label for="tanggal_transaksi" class="form-label fw-semibold text-primary-light text-sm mb-8">
+                                    <label for="date" class="form-label fw-semibold text-primary-light text-sm mb-8">
                                         Tanggal:
                                     </label>
-                                    <input type="date" name="tanggal_transaksi" id="tanggal_transaksi" class="form-control radius-8"
+                                    <input type="date" name="date" id="date" class="form-control radius-8"
                                         required>
                                 </div>
 
@@ -410,10 +401,10 @@
                                         step="0.1" min="0.1" required>
                                 </div>
                                 <div class="col-6 mb-20">
-                                    <label for="harga_satuan" class="form-label fw-semibold text-primary-light text-sm mb-8">
+                                    <label for="price" class="form-label fw-semibold text-primary-light text-sm mb-8">
                                         Harga Satuan (Rp):
                                     </label>
-                                    <input type="number" name="harga_satuan" id="harga_satuan"
+                                    <input type="number" name="price" id="price"
                                         class="form-control radius-8"
                                         placeholder="Masukkan harga satuan"
                                         min="0" required>
@@ -483,7 +474,7 @@
                             </td>
                             <td>
                                 <div class="flex-align gap-8">
-                                    <span class="h6 mb-0 fw-medium text-gray-300">{{ $pembelians->tanggal_transaksi }}</span>
+                                    <span class="h6 mb-0 fw-medium text-gray-300">{{ $pembelians->date }}</span>
                                 </div>
                             </td>
                             <td>
@@ -496,7 +487,7 @@
                                 <span class="h6 mb-0 fw-medium text-gray-300">{{ $pembelians->kuantitas }}</span>
                             </td>
                             <td>
-                                <span class="h6 mb-0 fw-medium text-gray-300">{{ $pembelians->harga_satuan }}</span>
+                                <span class="h6 mb-0 fw-medium text-gray-300">{{ $pembelians->price }}</span>
                             </td>
                             <td>
                                 <span class="h6 mb-0 fw-medium text-gray-300">{{ $pembelians->total_transaksi }}</span>

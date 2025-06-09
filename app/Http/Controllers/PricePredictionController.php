@@ -111,11 +111,6 @@ class PricePredictionController extends Controller
         int $seasonalPeriod,
         int $periods
     ) {
-        // Implementasi aktual tergantung library yang digunakan
-        // Ini contoh menggunakan PHP-ML (sederhana)
-
-        // Dalam praktik, sebaiknya gunakan R/Python untuk SARIMA yang lebih akurat
-        // Ini hanya ilustrasi
 
         $n = count($series);
         $predictions = [];

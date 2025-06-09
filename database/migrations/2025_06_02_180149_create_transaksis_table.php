@@ -21,7 +21,7 @@ return new class extends Migration
             $table->decimal('kuantitas', 10, 1);
             $table->decimal('price', 12, 0);
             $table->decimal('total_transaksi', 15, 2);
-            $table->enum('jenis_pembayaran', ['tunai', 'hutang']);
+            $table->enum('jenis_pembayaran', ['tunai', 'DP']);
             $table->timestamps();
         });
     }

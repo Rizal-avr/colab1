@@ -33,7 +33,7 @@
                         <span class="text">Petani</span>
                     </a>
                 <li class="sidebar-menu__item">
-                    <a href="pricing-plan.html" class="sidebar-menu__link">
+                    <a href="{{ route('debt.index') }}" class="sidebar-menu__link">
                         <span class="icon"><i class="ph ph-coins"></i></span>
                         <span class="text">Debt</span>
                     </a>
@@ -107,4 +107,3 @@
         </div>
     </div>
 </aside>
-<!-- ============================ Sidebar End  ============================ -->

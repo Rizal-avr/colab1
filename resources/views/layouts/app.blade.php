@@ -40,7 +40,9 @@
         @include('partials.sidebar-admin')
     @endif
 
-    @yield('content')
+    <main>
+        @yield('content')
+    </main>
 
 </body>
 
@@ -64,7 +66,7 @@
     <!-- apex charts -->
     <script src="{{asset('assets/js/apexcharts.min.js')}}"></script>
     <!-- Calendar Js -->
-    <script src="{{asset('assets/js/calendar.js')}}"></script>
+    <!-- <script src="{{asset('assets/js/calendar.js')}}"></script> -->
     <!-- jvectormap Js -->
     <script src="{{asset('assets/js/jquery-jvectormap-2.0.5.min.js')}}"></script>
     <!-- jvectormap world Js -->

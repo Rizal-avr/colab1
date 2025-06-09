@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('content')
-<div class="container">
+@section( 'content')
+<div class="dashboard-main-wrapper">
     <h2>Hasil Prediksi Harga</h2>
     
     <div class="row mb-4">
@@ -17,8 +17,10 @@
         </div>
     </div>
     
-    <div class="chart-container mb-4">
-        <canvas id="predictionChart"></canvas>
+    <div class="card">
+        <div class="chart-container mb-4">
+            <canvas id="predictionChart"></canvas>
+        </div>
     </div>
     
     <h3>Data Prediksi</h3>
